@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "./student"
+require '/Users/xiaogwu/Code/wk01d06/people_picker_class/student.rb'
 require 'json'
 require 'pry'
 
@@ -14,8 +14,8 @@ require 'pry'
 
 
 # Read in students.json file and put in students array if json file exists, otherwise assume empty array
-if FileTest.exist?("/Users/xiaogwu/Code/ga-wknd01/people_picker_class/students.json")
-  students = JSON.parse(File.open("/Users/xiaogwu/Code/ga-wknd01/people_picker_class/students.json", "r").read, :symbolize_names => true)
+if FileTest.exist?("/Users/xiaogwu/Code/wk01d06/people_picker_class/students.json")
+  students = JSON.parse(File.open("/Users/xiaogwu/Code/wk01d06/people_picker_class/students.json", "r").read, :symbolize_names => true)
 else
   students = []
 end
@@ -44,10 +44,10 @@ def output_groups(students, size_of_group)
 end
 # Method to print usage
 def print_usage
-  puts "Usage: " + $0
-  puts "       " + $0 + " -n N (N number of random people)"
-  puts "       " + $0 + " -g N (Groups of N random people)"
-  puts "       " + $0 + " -G N (N Groups of random people)"
+  puts "Usage: " + File.basename($0)
+  puts "       " + File.basename($0) + " -n N (N number of random people)"
+  puts "       " + File.basename($0) + " -g N (Groups of N random people)"
+  puts "       " + File.basename($0) + " -G N (N Groups of random people)"
 end
 # Method to print error message
 def print_error
